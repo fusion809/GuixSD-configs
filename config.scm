@@ -4,6 +4,7 @@
 
 (use-modules (gnu) (gnu system nss))
 (use-service-modules desktop)
+(use-service-modules xorg)
 (use-package-modules certs gnome)
 
 (operating-system
@@ -42,12 +43,15 @@
   ;; and more.
   (services (cons* (gnome-desktop-service)
                    (console-keymap-service "us")
-                   (modify-services %desktop-services 
+                   (modify-services %desktop-services
+		     (slim-service-type config =>
+                       (slim-configuration (inherit config)
+					   (default-user "fusion809")
+					   (auto-login? #t)))
                      (guix-service-type config =>
                        (guix-configuration
                          (inherit config)
                          (use-substitutes? #f)
                          (extra-options '("--cores=4" "--max-jobs=8")))))))
   (sudoers-file (local-file "/etc/guix/sudoers"))
-
   (name-service-switch %mdns-host-lookup-nss))
