@@ -1,0 +1,2 @@
+# GuixSD configs
+These are my files I use for making GuixSD a more palatable experience. Each branch refers to a different version of GuixSD. The default branch will be updated to the one corresponding to the latest release I have gotten around to creating a branch for. The default branch will be updated to the one corresponding to the latest release I have gotten around to creating a branch for. 
