@@ -34,7 +34,7 @@
 
   (users (cons (user-account
                 (name "fusion809")
-                (comment "Brenton Horne's user")
+                (comment "Brenton Horne")
                 (group "users")
                 (supplementary-groups '("wheel" "netdev"
                                         "audio" "video"))
